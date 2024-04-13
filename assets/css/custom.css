@@ -2155,7 +2155,7 @@ a.view-more {
 	font-weight: 600;
 	font-size: 14px;
 	text-transform: uppercase;
-	margin-top: 40px;
+	margin-top: 0px;
 }
 a.view-more:hover {
 	background: #1b5e20;
