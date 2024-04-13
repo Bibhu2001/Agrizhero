@@ -1676,7 +1676,7 @@ section.services-area ul li.active:after {
 	position: relative;
 	padding: 35px 0 0 22px;
 }
-.counter-box:after {
+/* .counter-box:after {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -1685,7 +1685,7 @@ section.services-area ul li.active:after {
 	background: #fff;
 	border: 2px solid #e6e6e6;
 	content: "";
-}
+} */
 .counter-box p.counter-count {
 	position: relative;
 	z-index: 99;
