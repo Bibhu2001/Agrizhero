@@ -63,19 +63,42 @@ jQuery(document).ready(function($) {
 
 
     // ------- Counter Start ------- //
-    if ($('.counter-count').length) {
-        $('.counter-count').each(function() {
-            $(this).prop('Counter', 0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 5000,
-                easing: 'swing',
-                step: function(now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        });
-    }
+	if ($('.counter-count').length) {
+		$('.counter-count').each(function() {
+			var $this = $(this);
+			var originalValue = parseFloat($this.text());
+			var duration = 5000; // Animation duration in milliseconds
+			var easing = 'swing'; // Animation easing type
+	
+			// Determine the appropriate suffix for the counter value
+			var suffix = '';
+			if (originalValue >= 1000000) {
+				originalValue = Math.round(originalValue / 1000000);
+				suffix = 'M';
+			} else if (originalValue >= 1000) {
+				originalValue = Math.round(originalValue / 1000);
+				suffix = 'K';
+			}
+	
+			// Add a plus sign for positive values
+			var displayValue = originalValue >= 0 ? originalValue : Math.abs(originalValue);
+			displayValue = displayValue + suffix + (originalValue >= 0 ? '+' : '');
+	
+			$({ countNum: 0 }).animate({ countNum: originalValue }, {
+				duration: duration,
+				easing: easing,
+				step: function(now) {
+					// Round the counter value to the nearest integer
+					var roundedValue = Math.ceil(now);
+					// Update the text content of the element with the rounded value, plus sign, and suffix
+					$this.text(Math.abs(roundedValue) + suffix + (originalValue >= 0 ? '+' : ''));
+				}
+			});
+		});
+	}
+	
+	
+	
     // ------- Counter End ------- // 
 
 		if ($('#partner-logos').length) {

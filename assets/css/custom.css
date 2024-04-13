@@ -6819,3 +6819,9 @@ section.wf100.p80.fcampaigns {
 	background: #125688;
 	color: white;
 }
+.f-drop{
+	filter: drop-shadow(2px 4px 6px black);
+}
+.item img{
+	filter: blur(.8px);
+}
