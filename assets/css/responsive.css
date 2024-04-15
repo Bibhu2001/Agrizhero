@@ -1296,3 +1296,10 @@ section.page404.wf100.p80 img {
 .home-facts.counter .counter-box p.ctxt {font-size:14px;}
 
 }
+@media screen and (min-width: 770px) and (max-width: 1024px) {
+	header.header-style-2 .navbar-brand {
+		
+		margin-right: 61px;
+	
+}
+}
