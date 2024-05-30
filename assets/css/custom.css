@@ -6825,3 +6825,9 @@ section.wf100.p80.fcampaigns {
 .item img{
 	filter: blur(.8px);
 }
+
+.classteam{
+	display: block;
+    margin-left: 25%;
+	
+}
